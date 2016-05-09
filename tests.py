@@ -12,11 +12,11 @@ class FavmappTestCase(unittest.TestCase):
         pass
 
     def test_health_check(self):
-        response = self.app.get('/')
+        response = self.app.get('/api')
         self.assertEquals(response.data,
                           '"Hello this is the Favmapp API"',
                           "GET healthcheck didn't respond ok")
-        response = self.app.post('/')
+        response = self.app.post('/api')
         self.assertEquals(response.data,
                           '"Hello, you successfully sent a POST to Favmapp API"',
                           "POST healthcheck didn't respond ok")
